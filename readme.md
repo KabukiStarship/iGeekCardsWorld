@@ -1,6 +1,6 @@
-# Kabuki Cards
+# Unseenia Cards
 
-Kabuki Cards is a playing card game engine designed to teach people how to code.
+A card game mod for [Unseenia](https://unseenia.com).
 
 ## License
 
