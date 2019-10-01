@@ -19,37 +19,49 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="blackjack\blackjack_card_combo.cc" />
-    <ClCompile Include="blackjack\blackjack_dealer.cc" />
-    <ClCompile Include="blackjack\blackjack_hand.cc" />
-    <ClCompile Include="blackjack\blackjack_player.cc" />
-    <ClCompile Include="cards\card.cc" />
-    <ClCompile Include="cards\cardcombo.cc" />
-    <ClCompile Include="cards\deckdefault.cc" />
-    <ClCompile Include="cards\cardstack.cc" />
-    <ClCompile Include="cards\dealer.cc" />
-    <ClCompile Include="cards\deck.cc" />
-    <ClCompile Include="cards\hand.cc" />
-    <ClCompile Include="cards\player.cc" />
-    <ClCompile Include="pch.cc" />
+    <ClCompile Include="_seams\main.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="00_cardstack.h" />
-    <ClInclude Include="03_blackjack.h" />
-    <ClInclude Include="01_hand.h" />
-    <ClInclude Include="02_deck.h" />
-    <ClInclude Include="blackjack\blackjack_cardcombo.h" />
-    <ClInclude Include="blackjack\blackjack_dealer.h" />
-    <ClInclude Include="blackjack\blackjack_hand.h" />
-    <ClInclude Include="blackjack\blackjack_player.h" />
-    <ClInclude Include="cards\card.h" />
-    <ClInclude Include="cards\cardcombo.h" />
-    <ClInclude Include="cards\cardstack.h" />
-    <ClInclude Include="cards\dealer.h" />
-    <ClInclude Include="cards\deck.h" />
-    <ClInclude Include="cards\deckdefault.h" />
-    <ClInclude Include="cards\hand.h" />
-    <ClInclude Include="cards\player.h" />
+    <ClInclude Include="blackjack.h" />
+    <ClInclude Include="blackjack_card_combo.h" />
+    <ClInclude Include="blackjack_dealer.h" />
+    <ClInclude Include="blackjack_hand.h" />
+    <ClInclude Include="blackjack_player.h" />
+    <ClInclude Include="card.h" />
+    <ClInclude Include="card_combo.h" />
+    <ClInclude Include="card_stack.h" />
+    <ClInclude Include="dealer.h" />
+    <ClInclude Include="deck.h" />
+    <ClInclude Include="deck_default.h" />
+    <ClInclude Include="hand.h" />
+    <ClInclude Include="player.h" />
+    <ClInclude Include="_config.h" />
+    <ClInclude Include="_seams\03.blackjack.inl" />
+    <ClInclude Include="_seams\00.cardstack.inl" />
+    <ClInclude Include="_seams\01.hand.inl" />
+    <ClInclude Include="_seams\release.inl" />
+    <ClInclude Include="_seams\02.deck.inl" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="blackjack_card_combo.inl" />
+    <None Include="blackjack_dealer.inl" />
+    <None Include="blackjack_hand.inl" />
+    <None Include="blackjack_player.inl" />
+    <None Include="card.inl" />
+    <None Include="card_combo.inl" />
+    <None Include="card_stack.inl" />
+    <None Include="card_deck_default.inl" />
+    <None Include="dealer.inl" />
+    <None Include="deck.inl" />
+    <None Include="deck_default.inl" />
+    <None Include="hand.inl" />
+    <None Include="player.inl" />
+    <None Include="readme.md" />
+    <None Include="_impl.inl" />
+    <None Include="_seams\readme.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="_seams\CMakeLists.txt" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
@@ -57,7 +69,7 @@
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>kabukicardsconsole</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
-    <ProjectName>KabukiCards.Lib</ProjectName>
+    <ProjectName>unseenia.cards</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">

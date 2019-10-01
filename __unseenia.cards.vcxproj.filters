@@ -1,110 +1,131 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="resources">
-      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
-    </Filter>
-    <Filter Include="lib">
+    <Filter Include="./">
       <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
       <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
     </Filter>
-    <Filter Include="lib\cards">
-      <UniqueIdentifier>{ede66243-5839-44c4-abf4-babc9819d7f8}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="lib\blackjack">
-      <UniqueIdentifier>{fda08a6c-3586-433c-a67f-8105ad84bc3c}</UniqueIdentifier>
+    <Filter Include="./\_seams">
+      <UniqueIdentifier>{bf6d73eb-a329-4324-839b-c163042c31b8}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="cards\dealer.cc">
-      <Filter>lib\cards</Filter>
-    </ClCompile>
-    <ClCompile Include="cards\deck.cc">
-      <Filter>lib\cards</Filter>
-    </ClCompile>
-    <ClCompile Include="cards\hand.cc">
-      <Filter>lib\cards</Filter>
-    </ClCompile>
-    <ClCompile Include="cards\player.cc">
-      <Filter>lib\cards</Filter>
-    </ClCompile>
-    <ClCompile Include="cards\card.cc">
-      <Filter>lib\cards</Filter>
-    </ClCompile>
-    <ClCompile Include="blackjack\blackjack_hand.cc">
-      <Filter>lib\blackjack</Filter>
-    </ClCompile>
-    <ClCompile Include="blackjack\blackjack_player.cc">
-      <Filter>lib\blackjack</Filter>
-    </ClCompile>
-    <ClCompile Include="blackjack\blackjack_card_combo.cc">
-      <Filter>lib\blackjack</Filter>
-    </ClCompile>
-    <ClCompile Include="blackjack\blackjack_dealer.cc">
-      <Filter>lib\blackjack</Filter>
-    </ClCompile>
-    <ClCompile Include="pch.cc">
-      <Filter>lib</Filter>
-    </ClCompile>
-    <ClCompile Include="cards\cardstack.cc">
-      <Filter>lib\cards</Filter>
-    </ClCompile>
-    <ClCompile Include="cards\deckdefault.cc">
-      <Filter>lib\cards</Filter>
-    </ClCompile>
-    <ClCompile Include="cards\cardcombo.cc">
-      <Filter>lib\cards</Filter>
+    <ClCompile Include="_seams\main.cpp">
+      <Filter>./\_seams</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="cards\dealer.h">
-      <Filter>lib\cards</Filter>
+    <ClInclude Include="blackjack.h">
+      <Filter>./</Filter>
     </ClInclude>
-    <ClInclude Include="cards\deck.h">
-      <Filter>lib\cards</Filter>
+    <ClInclude Include="blackjack_card_combo.h">
+      <Filter>./</Filter>
     </ClInclude>
-    <ClInclude Include="cards\hand.h">
-      <Filter>lib\cards</Filter>
+    <ClInclude Include="blackjack_dealer.h">
+      <Filter>./</Filter>
     </ClInclude>
-    <ClInclude Include="cards\player.h">
-      <Filter>lib\cards</Filter>
+    <ClInclude Include="blackjack_hand.h">
+      <Filter>./</Filter>
     </ClInclude>
-    <ClInclude Include="cards\card.h">
-      <Filter>lib\cards</Filter>
+    <ClInclude Include="blackjack_player.h">
+      <Filter>./</Filter>
     </ClInclude>
-    <ClInclude Include="blackjack\blackjack_dealer.h">
-      <Filter>lib\blackjack</Filter>
+    <ClInclude Include="card.h">
+      <Filter>./</Filter>
     </ClInclude>
-    <ClInclude Include="blackjack\blackjack_hand.h">
-      <Filter>lib\blackjack</Filter>
+    <ClInclude Include="dealer.h">
+      <Filter>./</Filter>
     </ClInclude>
-    <ClInclude Include="blackjack\blackjack_player.h">
-      <Filter>lib\blackjack</Filter>
+    <ClInclude Include="deck.h">
+      <Filter>./</Filter>
     </ClInclude>
-    <ClInclude Include="blackjack\blackjack_cardcombo.h">
-      <Filter>lib\blackjack</Filter>
+    <ClInclude Include="hand.h">
+      <Filter>./</Filter>
     </ClInclude>
-    <ClInclude Include="01_hand.h">
-      <Filter>lib</Filter>
+    <ClInclude Include="player.h">
+      <Filter>./</Filter>
     </ClInclude>
-    <ClInclude Include="00_cardstack.h">
-      <Filter>lib</Filter>
+    <ClInclude Include="_config.h">
+      <Filter>./</Filter>
     </ClInclude>
-    <ClInclude Include="cards\cardstack.h">
-      <Filter>lib\cards</Filter>
+    <ClInclude Include="card_combo.h">
+      <Filter>./</Filter>
     </ClInclude>
-    <ClInclude Include="cards\cardcombo.h">
-      <Filter>lib\cards</Filter>
+    <ClInclude Include="card_stack.h">
+      <Filter>./</Filter>
     </ClInclude>
-    <ClInclude Include="cards\deckdefault.h">
-      <Filter>lib\cards</Filter>
+    <ClInclude Include="deck_default.h">
+      <Filter>./</Filter>
     </ClInclude>
-    <ClInclude Include="02_deck.h">
-      <Filter>lib</Filter>
+    <ClInclude Include="_seams\release.inl">
+      <Filter>./\_seams</Filter>
     </ClInclude>
-    <ClInclude Include="03_blackjack.h">
-      <Filter>lib</Filter>
+    <ClInclude Include="_seams\02.deck.inl">
+      <Filter>./\_seams</Filter>
     </ClInclude>
+    <ClInclude Include="_seams\01.hand.inl">
+      <Filter>./\_seams</Filter>
+    </ClInclude>
+    <ClInclude Include="_seams\00.cardstack.inl">
+      <Filter>./\_seams</Filter>
+    </ClInclude>
+    <ClInclude Include="_seams\03.blackjack.inl">
+      <Filter>./\_seams</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="blackjack_card_combo.inl">
+      <Filter>./</Filter>
+    </None>
+    <None Include="blackjack_dealer.inl">
+      <Filter>./</Filter>
+    </None>
+    <None Include="blackjack_hand.inl">
+      <Filter>./</Filter>
+    </None>
+    <None Include="blackjack_player.inl">
+      <Filter>./</Filter>
+    </None>
+    <None Include="card.inl">
+      <Filter>./</Filter>
+    </None>
+    <None Include="card_deck_default.inl">
+      <Filter>./</Filter>
+    </None>
+    <None Include="dealer.inl">
+      <Filter>./</Filter>
+    </None>
+    <None Include="deck.inl">
+      <Filter>./</Filter>
+    </None>
+    <None Include="hand.inl">
+      <Filter>./</Filter>
+    </None>
+    <None Include="player.inl">
+      <Filter>./</Filter>
+    </None>
+    <None Include="readme.md">
+      <Filter>./</Filter>
+    </None>
+    <None Include="_impl.inl">
+      <Filter>./</Filter>
+    </None>
+    <None Include="_seams\readme.md">
+      <Filter>./\_seams</Filter>
+    </None>
+    <None Include="card_combo.inl">
+      <Filter>./</Filter>
+    </None>
+    <None Include="card_stack.inl">
+      <Filter>./</Filter>
+    </None>
+    <None Include="deck_default.inl">
+      <Filter>./</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="_seams\CMakeLists.txt">
+      <Filter>./\_seams</Filter>
+    </Text>
   </ItemGroup>
 </Project>
