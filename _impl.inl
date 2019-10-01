@@ -1,0 +1,15 @@
+
+#include "cards/card.inl"
+#include "cards/card_deck_default.inl"
+#include "cards/cardcombo.inl"
+#include "cards/cardstack.inl"
+#include "cards/dealer.inl"
+#include "cards/deck.inl"
+#include "cards/deckdefault.inl"
+#include "cards/hand.inl"
+#include "cards/player.inl"
+
+#include "blackjack_card_combo.inl"
+#include "blackjack_dealer.inl"
+#include "blackjack_hand.inl"
+#include "blackjack_player.inl"
