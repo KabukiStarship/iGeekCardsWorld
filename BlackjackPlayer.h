@@ -1,5 +1,5 @@
 /* iGeek CardsWorld @version 0.x
-@link    https://github.com/KabukiStarship/unseenia.cards.git
+@link    https://github.com/KabukiStarship/iGeekCardsWorld.git
 @file    /BlackjackPlayer.h
 @author  Cale McCollough <https://cookingwithcale.org>
 @license Copyright (C) 2014-21 Kabuki Starship <kabukistarship.com>;
@@ -28,5 +28,5 @@ class BlackjackPlayer {
   /* Function that performs the logic of playing a hand. */
   void PlayHand();
 };
-}  // namespace CardsWorld
+}  //< namespace CardsWorld
 #endif

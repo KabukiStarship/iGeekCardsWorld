@@ -1,5 +1,5 @@
 /* iGeek CardsWorld @version 0.x
-@link    https://github.com/KabukiStarship/unseenia.cards.git
+@link    https://github.com/KabukiStarship/iGeekCardsWorld.git
 @file    /_Seams/release.h
 @author  Cale McCollough <https://cookingwithcale.org>
 @license Copyright (C) 2014-21 Kabuki Starship <kabukistarship.com>;
@@ -27,5 +27,5 @@ inline const CHA* Release(const CHA* args) {
 #endif
   return 0;
 }
-}  // namespace cookbook
-}  // namespace unseenia
+}  //< namespace cookbook
+}  //< namespace unseenia

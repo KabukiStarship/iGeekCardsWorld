@@ -1,5 +1,5 @@
 /* iGeek CardsWorld @version 0.x
-@link    https://github.com/KabukiStarship/unseenia.cards.git
+@link    https://github.com/KabukiStarship/iGeekCardsWorld.git
 @file    /Hand.inl
 @author  Cale McCollough <https://cookingwithcale.org>
 @license Copyright (C) 2014-21 Kabuki Starship <kabukistarship.com>;
@@ -48,4 +48,4 @@ Autoject Hand::Cards() { return {0, 0}; }
 CardStack& Hand::VisibleCards() { return visible_cards_; }
 
 CardStack& Hand::HiddenCards() { return hidden_cards_; }
-}  // namespace CardsWorld
+}  //< namespace CardsWorld

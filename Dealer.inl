@@ -1,5 +1,5 @@
 /* iGeek CardsWorld @version 0.x
-@link    https://github.com/KabukiStarship/unseenia.cards.git
+@link    https://github.com/KabukiStarship/iGeekCardsWorld.git
 @file    /CardsWorld/source/blackjack/dealer.inl
 @author  Cale McCollough <https://cookingwithcale.org>
 @license Copyright (C) 2014-21 Kabuki Starship <kabukistarship.com>;
@@ -152,7 +152,7 @@ void Dealer::StartNewGame() {
 
 void Dealer::Redeal() {
   for (Player* currentPlayer : players)
-    currentPlayer->dealHand(Hand(stock, 2, Deck::defaultNumCardsWithJokers));
+    currentPlayer->dealHand(Hand(stock, 2, Deck::CardsCountDefaultWithJokers));
 }
 
-}  // namespace CardsWorld
+}  //< namespace CardsWorld

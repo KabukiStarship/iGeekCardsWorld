@@ -1,5 +1,5 @@
 /* iGeek CardsWorld @version 0.x
-@link    https://github.com/KabukiStarship/unseenia.cards.git
+@link    https://github.com/KabukiStarship/iGeekCardsWorld.git
 @file    /BlackjackDealer.inl
 @author  Cale McCollough <https://cookingwithcale.org>
 @license Copyright (C) 2014-21 Kabuki Starship <kabukistarship.com>;
@@ -14,4 +14,4 @@ BlackjackDealer::BlackjackDealer(const CHR* name)
     : Player((!name) ? "Dealer" : name, points_init_),
       Dealer(points_init_, starting_ante_, min_bet_, min_cards_per_hand_,
              max_cards_per_hand_, player_count_max_) {}
-}  // namespace CardsWorld
+}  //< namespace CardsWorld

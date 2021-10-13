@@ -1,5 +1,5 @@
 /* iGeek CardsWorld @version 0.x
-@link    https://github.com/KabukiStarship/unseenia.cards.git
+@link    https://github.com/KabukiStarship/iGeekCardsWorld.git
 @file    /Hand.h
 @author  Cale McCollough <https://cookingwithcale.org>
 @license Copyright (C) 2014-21 Kabuki Starship <kabukistarship.com>;
@@ -30,7 +30,7 @@ class Hand : public CardStack {
   and add the minimumNumCards to it.
   @pre stock.CardCount() must be > min_cards. */
   Hand(CardStack& stock, SIN min_cards = 1,
-       SIN card_count_max_ = Deck::CardCountWithJokers);
+       SIN card_count_max_ = Deck::CardsCountWithJokers);
 
   /* Virtual destructor. */
   virtual ~Hand() {}
@@ -93,5 +93,5 @@ class Hand : public CardStack {
     return o;
   }
 };
-}  // namespace CardsWorld
+}  //< namespace CardsWorld
 #endif

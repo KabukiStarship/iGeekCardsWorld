@@ -1,5 +1,5 @@
 /* iGeek CardsWorld @version 0.x
-@link    https://github.com/KabukiStarship/unseenia.cards.git
+@link    https://github.com/KabukiStarship/iGeekCardsWorld.git
 @file    /CardsWorld/source/blackjack/deck_.inl
 @author  Cale McCollough <https://cookingwithcale.org>
 @license Copyright (C) 2014-21 Kabuki Starship <kabukistarship.com>;
@@ -32,7 +32,7 @@ Deck::Deck(BOL deck_contains_jokers, SIN aces_are_high,
     : has_jokers_(deck_contains_jokers),
       aces_high_(aces_are_high),
       suit_culture_(suit_culture),
-      card_count_(deck_contains_jokers ? defaultNumCardsWithJokers
+      card_count_(deck_contains_jokers ? CardsCountDefaultWithJokers
                                        : CardCountDefault),
       lowest_card_value_(aces_are_high == 0 ? 1 : 2),
       highest_card_value_(aces_are_high == 0 ? 13 : 14) {

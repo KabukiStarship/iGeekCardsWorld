@@ -1,5 +1,5 @@
 /* iGeek CardsWorld @version 0.x
-@link    https://github.com/KabukiStarship/unseenia.cards.git
+@link    https://github.com/KabukiStarship/iGeekCardsWorld.git
 @file    /CardsWorld/source/blackjack/card_stack.inl
 @author  Cale McCollough <https://cookingwithcale.org>
 @license Copyright (C) 2014-21 Kabuki Starship <kabukistarship.com>;
@@ -13,7 +13,7 @@ namespace CardsWorld {
 
 CardStack::CardStack()
     : card_count_min_(0),
-      card_count_max_(Deck::defaultNumCardsWithJokers),
+      card_count_max_(Deck::CardsCountDefaultWithJokers),
       is_visible_(true),
       cards_(AStack<Card*>()) {}
 
@@ -176,4 +176,4 @@ BOL CardStack::IsVisible() { return is_visible_; }
 
 void CardStack::SetVisiblity(BOL visiblity) { is_visible_ = visiblity; }
 
-}  // namespace CardsWorld
+}  //< namespace CardsWorld

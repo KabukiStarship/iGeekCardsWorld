@@ -20,7 +20,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\iGeek\Env.h" />
-    <ClInclude Include="..\iGeek\EnvGoal.h" />
+    <ClInclude Include="..\iGeek\EnvGoal.hpp" />
     <ClInclude Include="..\iGeek\Shader.h" />
     <ClInclude Include="..\iGeek\_Seams\Release.h" />
     <ClInclude Include="..\iGeek\_Seams\_Config.h" />

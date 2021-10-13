@@ -1,5 +1,5 @@
 /* iGeek CardsWorld @version 0.x
-@link    https://github.com/KabukiStarship/unseenia.cards.git
+@link    https://github.com/KabukiStarship/iGeekCardsWorld.git
 @file    /player.inl
 @author  Cale McCollough <https://cookingwithcale.org>
 @license Copyright (C) 2014-21 Kabuki Starship <kabukistarship.com>;
@@ -42,4 +42,4 @@ void Player::WinAdd() { ++win_count_; }
 void Player::ResetWins() { win_count_ = 0; }
 
 void Player::HandDeal(Hand& hand) { hand_ = hand; }
-}  // namespace CardsWorld
+}  //< namespace CardsWorld

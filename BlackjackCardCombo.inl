@@ -1,5 +1,5 @@
 /* iGeek CardsWorld @version 0.x
-@link    https://github.com/KabukiStarship/unseenia.cards.git
+@link    https://github.com/KabukiStarship/iGeekCardsWorld.git
 @file    /blackjack_card_combo.inl
 @author  Cale McCollough <https://cookingwithcale.org>
 @license Copyright (C) 2014-21 Kabuki Starship <kabukistarship.com>;
@@ -34,4 +34,4 @@ SIN BlackjackCardCombo::PointValue() {
   }
   return total;
 }
-}  // namespace CardsWorld
+}  //< namespace CardsWorld

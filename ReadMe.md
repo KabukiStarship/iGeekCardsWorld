@@ -1,6 +1,4 @@
-# github.com/KabukiStarship/iGeek.cards.git
-
-A card game mod for [iGeek](https://iGeek.com).
+A playing cards game environment for [iGeek](https://iGeek.com).
 
 ## License
 

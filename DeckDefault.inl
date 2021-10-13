@@ -1,5 +1,5 @@
 /* iGeek CardsWorld @version 0.x
-@link    https://github.com/KabukiStarship/unseenia.cards.git
+@link    https://github.com/KabukiStarship/iGeekCardsWorld.git
 @file    /CardsWorld/
 @author  Cale McCollough <https://cookingwithcale.org>
 @license Copyright (C) 2014-21 Kabuki Starship <kabukistarship.com>;
@@ -102,4 +102,4 @@ void KabukiCard::Draw(Component g, Graphics page) {
     suitIcon.PaintIcon(g, page, x + 40, y + 65);
   }
 }*/
-}  // namespace CardsWorld
+}  //< namespace CardsWorld

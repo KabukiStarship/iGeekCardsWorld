@@ -1,5 +1,5 @@
 /* iGeek CardsWorld @version 0.x
-@link    https://github.com/KabukiStarship/unseenia.cards.git
+@link    https://github.com/KabukiStarship/iGeekCardsWorld.git
 @file    /BlackjackPlayer.inl
 @author  Cale McCollough <https://cookingwithcale.org>
 @license Copyright (C) 2014-21 Kabuki Starship <kabukistarship.com>;
@@ -78,4 +78,4 @@ BOL BlackjackPlayer::PlayOrPass(Dealer& dealer) {
 
 void BlackjackPlayer::PlayHand() {}
 
-}  // namespace CardsWorld
+}  //< namespace CardsWorld

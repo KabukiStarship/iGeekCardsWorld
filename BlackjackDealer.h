@@ -1,14 +1,14 @@
 /* iGeek CardsWorld @version 0.x
-@link    https://github.com/KabukiStarship/unseenia.cards.git
-@file    /blackjack_dealer.h
+@link    https://github.com/KabukiStarship/iGeekCardsWorld.git
+@file    /BlackjackDealer.h
 @author  Cale McCollough <https://cookingwithcale.org>
 @license Copyright (C) 2014-21 Kabuki Starship <kabukistarship.com>;
 All right reserved (R). This Source Code Form is subject to the terms of the
 Mozilla Public License, v. 2.0. If a copy of the MPL was not distributed with
 this file, You can obtain one at <https://mozilla.org/MPL/2.0/>. */
 #pragma once
-#ifndef IGEEK_CARDSWORD_BLACKJACK_DEADER_DECL
-#define IGEEK_CARDSWORD_BLACKJACK_DEADER_DECL
+#ifndef IGEEK_CARDSWORD_BLACKJACKDEADER_DECL
+#define IGEEK_CARDSWORD_BLACKJACKDEADER_DECL
 #include <_Config.h>
 //
 #include "Dealer.h"
@@ -34,5 +34,5 @@ class BlackjackDealer : public Player, public Dealer {
   /* */
   BlackjackDealer(const CHR* name = nullptr);
 };
-}  // namespace CardsWorld
+}  //< namespace CardsWorld
 #endif

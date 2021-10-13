@@ -1,5 +1,5 @@
 /* iGeek CardsWorld @version 0.x
-@link    https://github.com/KabukiStarship/unseenia.cards.git
+@link    https://github.com/KabukiStarship/iGeekCardsWorld.git
 @file    /_Seams/03.blackjack.h
 @author  Cale McCollough <https://cookingwithcale.org>
 @license Copyright (C) 2014-21 Kabuki Starship <kabukistarship.com>;
@@ -98,5 +98,5 @@ inline const CHA* Uniprinter(const CHA* args) {
 #endif
   return 0;
 }
-}  // namespace cards
-}  // namespace unseenia
+}  //< namespace cards
+}  //< namespace unseenia

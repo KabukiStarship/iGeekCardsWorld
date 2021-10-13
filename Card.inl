@@ -1,5 +1,5 @@
 /* iGeek CardsWorld @version 0.x
-@link    https://github.com/KabukiStarship/unseenia.cards.git
+@link    https://github.com/KabukiStarship/iGeekCardsWorld.git
 @file    /card.inl
 @author  Cale McCollough <https://cookingwithcale.org>
 @license Copyright (C) 2014-21 Kabuki Starship <kabukistarship.com>;
@@ -197,4 +197,4 @@ Printer& CardPrint(Printer& o, const Card& card) {
   }
   return o << suit_string;
 }
-}  // namespace CardsWorld
+}  //< namespace CardsWorld

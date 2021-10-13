@@ -1,5 +1,5 @@
 /* iGeek CardsWorld @version 0.x
-@link    https://github.com/KabukiStarship/unseenia.cards.git
+@link    https://github.com/KabukiStarship/iGeekCardsWorld.git
 @file    /card_combo.inl
 @author  Cale McCollough <https://cookingwithcale.org>
 @license Copyright (C) 2014-21 Kabuki Starship <kabukistarship.com>;
@@ -82,4 +82,4 @@ SIN CardCombo::AcesHigh() { return aces_high_; }
 
 SIN CardCombo::SetAcesHigh(SIN value) { aces_high_ = value; }
 
-}  // namespace CardsWorld
+}  //< namespace CardsWorld

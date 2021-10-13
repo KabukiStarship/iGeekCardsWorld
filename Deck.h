@@ -1,5 +1,5 @@
 /* iGeek CardsWorld @version 0.x
-@link    https://github.com/KabukiStarship/unseenia.cards.git
+@link    https://github.com/KabukiStarship/iGeekCardsWorld.git
 @file    /CardsWorld/source/Deck.h
 @author  Cale McCollough <https://cookingwithcale.org>
 @license Copyright (C) 2014-21 Kabuki Starship <kabukistarship.com>;
@@ -37,20 +37,20 @@ class Deck {
  public:
   enum {
     // The default number of playing cards in a deck excluding Jokers.
-    CardCountDefault = 52,
+    CardsCountDefault = 52,
     // The default number of playing cards in a deck including Jokers.
-    CardCountWithJokers = 54,
+    CardsCountWithJokers = 54,
     // Flag represents if Aces are high (i.e. has a face value of 14).
-    kAcesHigh = 14,
+    AcesHigh = 14,
     // Flag represents if Aces are low (i.e. has a face value of 1).
-    kAcesLow = 0,
+    AcesLow = 0,
     /* Flag represents if Aces can be either high or low
       (i.e. has a point value of 1 or 14). */
-    kAcesHighOrLow = 1,
+    AcesHighOrLow = 1,
     // Flag for if this deck contains Jokers.
-    kHasJokers = 1,
+    JokersYes = 1,
     // Flag for if this deck doesn't contains Jokers.
-    kHasNoJokers = 0,
+    JokersNo = 0,
   };
 
   /* The default suit value order, Clubs = 1, Diamonds=2, Hearts=3, and
@@ -75,7 +75,7 @@ class Deck {
   a negative number means that aces are low.
   @param  card_suit_culture This paramter is used to determine what suites
   we are using. */
-  Deck(BOL deck_contains_jokers = kHasNoJokers, SIN aces_are_high = kAcesHigh,
+  Deck(BOL deck_contains_jokers = JokersNo, SIN aces_are_high = AcesHigh,
        SuitCulture card_suit_culture = Card::kFrench,
        const CHA* rear_deck_image_filename = kDefaultRearDeckImage),
        const CHA* deck_art_folder = kDefaultDeckArtDirectory);
@@ -151,5 +151,5 @@ class Deck {
    * [1-13]-[1-4].svg/J-1.svg/J-2.svg format. */
   SIN CheckDeckArtFolder(const CHR* deck_art_folder);
 };
-}  // namespace CardsWorld
+}  //< namespace CardsWorld
 #endif

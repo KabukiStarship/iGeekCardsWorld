@@ -595,7 +595,7 @@
     <ClInclude Include="..\KabukiToolkit\Touch\ChannelGroup.hpp">
       <Filter>KabukiToolkit\Touch</Filter>
     </ClInclude>
-    <ClInclude Include="..\iGeek\EnvGoal.h">
+    <ClInclude Include="..\iGeek\EnvGoal.hpp">
       <Filter>iGeek</Filter>
     </ClInclude>
     <ClInclude Include="..\iGeek\Shader.h">
