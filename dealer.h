@@ -1,19 +1,16 @@
-/* Unseenia Cards @version 0.x
-@link    https://github.com/kabuki-starship/unseenia.cards.git
-@file    /projects/kabuki_cards/source/dealer.h
-@author  Cale McCollough <https://cale-mccollough.github.io>
-@license Copyright (C) 2014-9 Kabuki Starship <kabukistarship.com>;
+/* iGeek CardsWorld @version 0.x
+@link    https://github.com/KabukiStarship/unseenia.cards.git
+@file    /CardsWorld/source/Dealer.h
+@author  Cale McCollough <https://cookingwithcale.org>
+@license Copyright (C) 2014-21 Kabuki Starship <kabukistarship.com>;
 All right reserved (R). This Source Code Form is subject to the terms of the
 Mozilla Public License, v. 2.0. If a copy of the MPL was not distributed with
 this file, You can obtain one at <https://mozilla.org/MPL/2.0/>. */
-
-#ifndef UNSEENIA_CARDS_DEALER_H
-#define UNSEENIA_CARDS_DEALER_H
-
-#include "hand.h"
-#include "player.h"
-
-namespace unseenia { namespace cards {
+#ifndef IGEEK_CARDSWORD_DEALER_DECL
+#define IGEEK_CARDSWORD_DEALER_DECL
+#include "Hand.h"
+#include "Player.h"
+namespace CardsWorld {
 
 /* A class that represnts a dealer in a card game.
     A dealer has the Deck of cards, but is not neccissaraly a player. A dealer
@@ -150,4 +147,4 @@ class Dealer {
 
 } }  //< namespace unseenia
 
-#endif  //< UNSEENIA_CARDS_DEALER_H
+#endif  //< IGEEK_CARDSWORD_DEALER_DECL

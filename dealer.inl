@@ -1,16 +1,13 @@
-/* Unseenia Cards @version 0.x
-@link    https://github.com/kabuki-starship/unseenia.cards.git
-@file    /projects/kabuki_cards/source/blackjack/dealer.inl
-@author  Cale McCollough <https://cale-mccollough.github.io>
-@license Copyright (C) 2014-9 Kabuki Starship <kabukistarship.com>;
+/* iGeek CardsWorld @version 0.x
+@link    https://github.com/KabukiStarship/unseenia.cards.git
+@file    /CardsWorld/source/blackjack/dealer.inl
+@author  Cale McCollough <https://cookingwithcale.org>
+@license Copyright (C) 2014-21 Kabuki Starship <kabukistarship.com>;
 All right reserved (R). This Source Code Form is subject to the terms of the
 Mozilla Public License, v. 2.0. If a copy of the MPL was not distributed with
 this file, You can obtain one at <https://mozilla.org/MPL/2.0/>. */
-
-#include "dealer.h"
-
-namespace unseenia {
-namespace cards {
+#include "Dealer.h"
+namespace CardsWorld {
 
 Dealer::Dealer(SIN starting_ante, SIN min_bit, SIN min_cards_per_hand,
                SIN max_cards_per_hand, SIN max_player_count)
@@ -158,5 +155,4 @@ void Dealer::Redeal() {
     currentPlayer->dealHand(Hand(stock, 2, Deck::defaultNumCardsWithJokers));
 }
 
-}  // namespace cards
-}  // namespace unseenia
+}  // namespace CardsWorld

@@ -1,22 +1,20 @@
-/* Unseenia Cards @version 0.x
-@link    github.com/kabuki-starship/unseenia.cards.git
+/* iGeek CardsWorld @version 0.x
+@link    https://github.com/KabukiStarship/unseenia.cards.git
 @file    /blackjack.h
-@author  Cale McCollough <https://cale-mccollough.github.io>
-@license Copyright 2014-9 (C) Kabuki Starship <kabukistarship.com>; all rights
+@author  Cale McCollough <https://cookingwithcale.org>
+@license Copyright 2014-21 (C) Kabuki Starship <kabukistarship.com>; all rights
 reserved (R). This Source Code Form is subject to the terms of the Mozilla
 Public License, v. 2.0. If a copy of the MPL was not distributed with this file,
 You can obtain one at <https://mozilla.org/MPL/2.0/>. */
-
 #pragma once
-
-#include "../cardstack.h"
-#include "../hand.h"
-
-namespace kabuki_cards {
+#ifndef IGEEK_CARDSWORDWORLD_DECL
+#define IGEEK_CARDSWORDWORLD_DECL
+#include "CardStack.h"
+#include "Hand.h"
+namespace CardsWorld {
 
 /* Class that represents a Hand in Blackjack.
-A blackjack hand has a minmum of 2 cards.
-*/
+A blackjack hand has a minmum of 2 cards. */
 class BlackjackHand : public Hand {
  public:
   /* Constructor.
@@ -35,14 +33,14 @@ class BlackjackHand : public Hand {
   /* Adds the new Card to this Hand. */
   int AddCard(Card* new_card);
 
-  // Resturns a AString representation of this object.
-  AString ToString();
+  // Resturns a _::AString representation of this object.
+  _::AString ToString();
 };
 
 class BlackjackCardCombo : public CardCombo {
  public:
   /* Default constructor. */
-  BlackjackCardCombo(CardStack& copyStack, int acesHighLowORNA);
+  BlackjackCardCombo(CardStack& copy_stack, int aces_high_low_orna);
 
   // Function that returns the point value based on the ace value.
   int GetPointValue();
@@ -58,13 +56,13 @@ class BlackjackDealer : public Player, public Dealer {
   enum {
     numDecks = 1,             //< The number of decks for this game.
     deckSize = 52,            //< The number of cards in the Deck.
-    startingPoints = 999999,  //< The dealers starting points.
+    points_init_ = 999999,  //< The dealers starting points.
     startingAnte = 5,         //< The starting ante.
     minBet = 1,               //< The minimum bet.
     minNumCardsPerHand = 2,   //< The minimum number of cards in a hand.
     maxNumCardsPerHand =
         Deck::defaultNumCards,  //< The maximum number of cards in a hnd.
-    maxNumPlayer = 2            //< The maximum number of players.
+    player_count_max_ = 2            //< The maximum number of players.
   };
 
   /* Constructor.
@@ -78,7 +76,7 @@ class BlackjackDealer : public Player, public Dealer {
 class BlackjackPlayer {
  public:
   /* Default Constructor. */
-  BlackjackPlayer(AString playerName = "You", int startPoints = 10,
+  BlackjackPlayer(_::AString playerName = "You", int startPoints = 10,
                   bool playerOrDealer);
 
   // Destructor.
@@ -92,4 +90,5 @@ class BlackjackPlayer {
   void PlayHand();
 };
 
-}  // namespace kabuki_cards
+}  // namespace CardsWorld
+#endif

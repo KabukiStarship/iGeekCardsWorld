@@ -1,21 +1,16 @@
-/* Unseenia Cards @version 0.x
-@link    https://github.com/kabuki-starship/unseenia.cards.git
-@file    /deck_default.h
-@author  Cale McCollough <https://cale-mccollough.github.io>
-@license Copyright (C) 2014-9 Kabuki Starship <kabukistarship.com>;
+/* iGeek CardsWorld @version 0.x
+@link    https://github.com/KabukiStarship/unseenia.cards.git
+@file    /DeckDefault.h
+@author  Cale McCollough <https://cookingwithcale.org>
+@license Copyright (C) 2014-21 Kabuki Starship <kabukistarship.com>;
 All right reserved (R). This Source Code Form is subject to the terms of the
 Mozilla Public License, v. 2.0. If a copy of the MPL was not distributed with
 this file, You can obtain one at <https://mozilla.org/MPL/2.0/>. */
-
-#ifndef UNSEENIA_CARDS_DECKDEFAULT_H
-#define UNSEENIA_CARDS_DECKDEFAULT_H
-
-#include <_config.h>
-
-#include "deck.h"
-
-namespace unseenia {
-namespace cards {
+#pragma once
+#ifndef IGEEK_CARDSWORD_DECKDEFAULT_H
+#define IGEEK_CARDSWORD_DECKDEFAULT_H
+#include "Deck.h"
+namespace CardsWorld {
 
 class DeckDefault : public Deck {
   CardSuit suit_;        //< The suit of this Card.
@@ -99,8 +94,8 @@ class DeckDefault : public Deck {
   /* Function sets the culture to the newCulture. */
   void SetCulture(CardCulture newCulture);
 
-  /* Returns a AString representation of the suit. */
-  const CH1* SuitString();
+  /* Returns a _::AString representation of the suit. */
+  const CHA* SuitString();
 
   /* Prints this object to the Printer. */
   template <typename Printer>
@@ -121,8 +116,5 @@ class DeckDefault : public Deck {
     return o;
   }
 };
-
-}  // namespace cards
-}  // namespace unseenia
-
+}  // namespace CardsWorld
 #endif

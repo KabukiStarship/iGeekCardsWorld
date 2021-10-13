@@ -1,15 +1,13 @@
-/* Unseenia Cards @version 0.x
-@link    https://github.com/kabuki-starship/unseenia.cards.git
-@file    /deck_default.inl
-@author  Cale McCollough <https://cale-mccollough.github.io>
-@license Copyright (C) 2014-9 Kabuki Starship <kabukistarship.com>;
+/* iGeek CardsWorld @version 0.x
+@link    https://github.com/KabukiStarship/unseenia.cards.git
+@file    /CardDeckDefault.inl
+@author  Cale McCollough <https://cookingwithcale.org>
+@license Copyright (C) 2014-21 Kabuki Starship <kabukistarship.com>;
 All right reserved (R). This Source Code Form is subject to the terms of the
 Mozilla Public License, v. 2.0. If a copy of the MPL was not distributed with
 this file, You can obtain one at <https://mozilla.org/MPL/2.0/>. */
-
-#include "card.h"
-
-namespace kabuki_cards {
+#include "Card.h"
+namespace CardsWorld {
 
 KabukiCard::Card() {
   face_value = 0;
@@ -17,7 +15,7 @@ KabukiCard::Card() {
   suit_string = "Empty";
 }
 
-void KabukiCard::setCard(int_w newSuit, int_w newFace) {
+void KabukiCard::setCard(ISN newSuit, ISN newFace) {
   suit = newSuit;
   face_value = newFace;
 
@@ -48,11 +46,11 @@ void KabukiCard::SetCard(Card cardTemp) {
   suitIcon = new ImageIcon(suit_string.concat(".jpg"));
 }
 
-AString KabukiCard::SuitString() { return suit_string; }
+_::AString KabukiCard::SuitString() { return suit_string; }
 
-int_w KabukiCard::FaceValue() { return face_value; }
+ISN KabukiCard::FaceValue() { return face_value; }
 
-int_w KabukiCard::CompareTo(Object other) {
+ISN KabukiCard::CompareTo(Object other) {
   Card c = (Card)other;
 
   if (this.suit_string() == null) return 1;
@@ -70,8 +68,8 @@ boolean KabukiCard::Equals(Card compairCard) {
   return false;
 }
 
-AString KabukiCard::ToString() {
-  AString card_tring;
+_::AString KabukiCard::ToString() {
+  _::AString card_tring;
 
   if (face_value == 1)
     card_tring = ("Ace of " + suit_string + ", ");
@@ -88,37 +86,37 @@ AString KabukiCard::ToString() {
   return card_tring;
 }
 
-int_w KabukiCard::xPos() { return xPos; }
+ISN KabukiCard::X() { return x_pos; }
 
-void KabukiCard::SetX(int_w newX) { xPos = newX; }
+void KabukiCard::XSet(ISN newX) { x_pos = newX; }
 
-int_w KabukiCard::yPos() { return yPos; }
+ISN KabukiCard::Y() { return y_pos; }
 
-void KabukiCard::setY(int_w newY) { yPos = newY; }
+void KabukiCard::YSet(ISN newY) { y_pos = newY; }
 
 /*
 void KabukiCard::draw(Component g, Graphics page) {
-  xPos = x;
-  yPos = y;
+  x_pos = x;
+  y_pos = y;
 
   if (!suit_string.equals("Empty")) {
     page.setColor(Color.white);
-    page.fillRoundRect(xPos, yPos, 60, 90, 15, 15);
+    page.fillRoundRect(x_pos, y_pos, 60, 90, 15, 15);
     page.setColor(Color.black);
-    page.drawRoundRect(xPos, yPos, 60, 90, 15, 15);
+    page.drawRoundRect(x_pos, y_pos, 60, 90, 15, 15);
     if (face_value == 1)
-      page.drawString("Ace", xPos + 28, yPos + 50);
+      page.drawString("Ace", x_pos + 28, y_pos + 50);
     else if (face_value == 11)
-      page.drawString("J", xPos + 28, yPos + 50);
+      page.drawString("J", x_pos + 28, y_pos + 50);
     else {
       if (face_value == 12)
-        page.drawString("Q", xPos + 28, yPos + 50);
+        page.drawString("Q", x_pos + 28, y_pos + 50);
       else {
         if (face_value == 13)
-          page.drawString("K", xPos + 28, yPos + 50);
+          page.drawString("K", x_pos + 28, y_pos + 50);
         else {
-          page.drawString(Integer.ToString(face_value), xPos + 6, yPos + 36);
-          page.drawString(Integer.ToString(face_value), xPos + 41, yPos + 60);
+          page.drawString(Integer.ToString(face_value), x_pos + 6, y_pos + 36);
+          page.drawString(Integer.ToString(face_value), x_pos + 41, y_pos + 60);
         }
       }
     }
@@ -129,4 +127,4 @@ void KabukiCard::draw(Component g, Graphics page) {
   }
 }*/
 
-}  // namespace kabuki_cards
+}  // namespace CardsWorld

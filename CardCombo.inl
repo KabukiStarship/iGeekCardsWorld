@@ -1,17 +1,15 @@
-/* Unseenia Cards @version 0.x
-@link    https://github.com/kabuki-starship/unseenia.cards.git
+/* iGeek CardsWorld @version 0.x
+@link    https://github.com/KabukiStarship/unseenia.cards.git
 @file    /card_combo.inl
-@author  Cale McCollough <https://cale-mccollough.github.io>
-@license Copyright (C) 2014-9 Kabuki Starship <kabukistarship.com>;
+@author  Cale McCollough <https://cookingwithcale.org>
+@license Copyright (C) 2014-21 Kabuki Starship <kabukistarship.com>;
 All right reserved (R). This Source Code Form is subject to the terms of the
 Mozilla Public License, v. 2.0. If a copy of the MPL was not distributed with
 this file, You can obtain one at <https://mozilla.org/MPL/2.0/>. */
+#include "CardCombo.h"
+namespace CardsWorld {
 
-#include "cardcombo.h"
-
-using namespace unseenia::cards;
-
-CardCombo::CardCombo(CardStack& copyStack, SIN joker_pip_value_1,
+CardCombo::CardCombo(CardStack& copy_stack, SIN joker_pip_value_1,
                      SIN joker_suit_value_1, SIN joker_pip_value_2,
                      SIN joker_suit_value_2, SIN thisAcesHigh) {
   SetValues(joker_pip_value_1, joker_suit_value_1, joker_pip_value_2,
@@ -83,3 +81,5 @@ SIN CardCombo::SetJokerSuitValue2(SIN value) {
 SIN CardCombo::AcesHigh() { return aces_high_; }
 
 SIN CardCombo::SetAcesHigh(SIN value) { aces_high_ = value; }
+
+}  // namespace CardsWorld

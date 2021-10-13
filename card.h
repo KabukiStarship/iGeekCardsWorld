@@ -1,19 +1,15 @@
-/* Unseenia Cards @version 0.x
-@link    https://github.com/kabuki-starship/unseenia.cards.git
-@file    /card.h
-@author  Cale McCollough <https://cale-mccollough.github.io>
-@license Copyright (C) 2014-9 Kabuki Starship <kabukistarship.com>;
+/* iGeek CardsWorld @version 0.x
+@link    https://github.com/KabukiStarship/unseenia.cards.git
+@file    /Card.h
+@author  Cale McCollough <https://cookingwithcale.org>
+@license Copyright (C) 2014-21 Kabuki Starship <kabukistarship.com>;
 All right reserved (R). This Source Code Form is subject to the terms of the
 Mozilla Public License, v. 2.0. If a copy of the MPL was not distributed with
 this file, You can obtain one at <https://mozilla.org/MPL/2.0/>. */
-
-#ifndef UNSEENIA_CARDS_CARD_HEADER
-#define UNSEENIA_CARDS_CARD_HEADER
-
-#include <_config.h>
-
-namespace unseenia {
-namespace cards {
+#ifndef IGEEK_CARDSWORD_CARD_DECL
+#define IGEEK_CARDSWORD_CARD_DECL
+#include <_Config.h>
+namespace CardsWorld {
 
 /* An enumerated list of different European-style playing card suites.
 Piacentine, Napoletane, Spagnole, Bergamasche suits are also known as Latin
@@ -29,7 +25,7 @@ enum class SuitCulture {
 };
 
 enum {
-  kSuitCultureCount = kBergamasche + 1,  // << Number of SuitCulture(s).
+  SuitCultureCount = kBergamasche + 1,  // << Number of SuitCulture(s).
 };
 
 /* An enumberated list of the different suites on playing cards in various
@@ -65,7 +61,7 @@ class Card {
       suit_value_;   //< The value of this suit.
   CardSuit suit_;    //< The suit of this Card.
   SuitCulture suit_culture_;  //< The culture of this Card.
-  const CH1* suit_string_;    //< A AString that stores the suit.
+  const CHA* suit_string_;    //< A _::AString that stores the suit.
   // Image card_image_;        //< The Image of this Card.
 
  public:
@@ -88,19 +84,19 @@ class Card {
 
   /* An array of Strings that represnet the 7 different directories for the suit
   icon file */
-  static const CH1** SuitCultures();
+  static const CHA** SuitCultures();
 
   /* A list of the Strings "Clubs", "Diamonds", "Hearts", "Spades" */
-  static const CH1** FrenchSuits();
+  static const CHA** FrenchSuits();
 
   /* A list of the Strings "Acorns", "Bells", "Hearts", "Lieves" */
-  static const CH1** GermanSuits();
+  static const CHA** GermanSuits();
 
   /* A list of the Strings "Acorns", "Bells", "Roses", "Shields" */
-  static const CH1** SwissGermanSuits();
+  static const CHA** SwissGermanSuits();
 
   /* A list of the Strings "Clubs", "Coins", "Cups", "Swords" */
-  static const CH1** LatinSuits();
+  static const CHA** LatinSuits();
 
   /* Creates a simple card with no image. The face_value will equal the
   point_value. */
@@ -158,7 +154,7 @@ class Card {
   void SetCulture(SuitCulture culture);
 
   /* Returns the suitString. */
-  const CH1* SuitString();
+  const CHA* SuitString();
 
   /* Loads and sets the card_image to the given directory.
   @return Returns 0 upon succes and -1 upon failure. */
@@ -179,8 +175,5 @@ class Card {
   /* Loads the card_image from the specified directory.
   Image LoadCardImage(const CHR* directory); */
 };
-
-}  // namespace cards
-}  // namespace unseenia
-
+}  // namespace CardsWorld
 #endif

@@ -1,21 +1,16 @@
-/* Unseenia Cards @version 0.x
-@link    https://github.com/kabuki-starship/unseenia.cards.git
+/* iGeek CardsWorld @version 0.x
+@link    https://github.com/KabukiStarship/unseenia.cards.git
 @file    /cards_tack.h
-@author  Cale McCollough <https://cale-mccollough.github.io>
-@license Copyright (C) 2014-9 Kabuki Starship <kabukistarship.com>;
+@author  Cale McCollough <https://cookingwithcale.org>
+@license Copyright (C) 2014-21 Kabuki Starship <kabukistarship.com>;
 All right reserved (R). This Source Code Form is subject to the terms of the
 Mozilla Public License, v. 2.0. If a copy of the MPL was not distributed with
 this file, You can obtain one at <https://mozilla.org/MPL/2.0/>. */
-
 #pragma once
-
-#include <script2/t_stack.h>
-
-#include "card.h"
-#include "deck.h"
-
-namespace unseenia {
-namespace cards {
+#include <Script2/Stack.hpp>
+#include "Card.h"
+#include "Deck.h"
+namespace CardWorld {
 
 /* Class that represents a stack of playing cards.
 A CardStack stores pointers to the Card objects in the Deck. When a card is
@@ -36,7 +31,7 @@ class LIB_MEMBER CardStack {
 
   /* Verbose constructor. */
   CardStack(CardStack& cards, SIN min_num_cards = 0,
-            SIN card_count_max_ = Deck::kCardCountWithJokers,
+            SIN card_count_max_ = Deck::CardCountWithJokers,
             BOL is_visible = false);
 
   /* Creates a CardStack from the deck. */
@@ -143,5 +138,4 @@ class LIB_MEMBER CardStack {
   }
 };
 
-}  // namespace cards
-}  // namespace unseenia
+}  // namespace CardsWorld

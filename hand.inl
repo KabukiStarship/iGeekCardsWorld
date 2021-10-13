@@ -1,16 +1,13 @@
-/* Unseenia Cards @version 0.x
-@link    https://github.com/kabuki-starship/unseenia.cards.git
-@file    /hand.inl
-@author  Cale McCollough <https://cale-mccollough.github.io>
-@license Copyright (C) 2014-9 Kabuki Starship <kabukistarship.com>;
+/* iGeek CardsWorld @version 0.x
+@link    https://github.com/KabukiStarship/unseenia.cards.git
+@file    /Hand.inl
+@author  Cale McCollough <https://cookingwithcale.org>
+@license Copyright (C) 2014-21 Kabuki Starship <kabukistarship.com>;
 All right reserved (R). This Source Code Form is subject to the terms of the
 Mozilla Public License, v. 2.0. If a copy of the MPL was not distributed with
 this file, You can obtain one at <https://mozilla.org/MPL/2.0/>. */
-
 #include "Hand.h"
-
-using namespace _;
-using namespace unseenia::cards;
+namespace CardsWorld {
 
 Hand::Hand(CardStack& stack, SIN min_cards, SIN card_count_max_)
     : card_count_min_(min_cards),
@@ -51,3 +48,4 @@ Autoject Hand::Cards() { return {0, 0}; }
 CardStack& Hand::VisibleCards() { return visible_cards_; }
 
 CardStack& Hand::HiddenCards() { return hidden_cards_; }
+}  // namespace CardsWorld

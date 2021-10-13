@@ -1,31 +1,28 @@
-/* Unseenia Cards @version 0.x
-@link    https://github.com/kabuki-starship/unseenia.cards.git
-@file    /projects/kabuki_cards/source/blackjack/deck_.inl
-@author  Cale McCollough <https://cale-mccollough.github.io>
-@license Copyright (C) 2014-9 Kabuki Starship <kabukistarship.com>;
+/* iGeek CardsWorld @version 0.x
+@link    https://github.com/KabukiStarship/unseenia.cards.git
+@file    /CardsWorld/source/blackjack/deck_.inl
+@author  Cale McCollough <https://cookingwithcale.org>
+@license Copyright (C) 2014-21 Kabuki Starship <kabukistarship.com>;
 All right reserved (R). This Source Code Form is subject to the terms of the
 Mozilla Public License, v. 2.0. If a copy of the MPL was not distributed with
 this file, You can obtain one at <https://mozilla.org/MPL/2.0/>. */
 
-#include "deck.h"
+#include "Deck.h"
 //
-#include "cardstack.h"
-
-#include <script2/t_strand.h>
-
-using namespace _;
-using namespace unseenia::cards;
+#include "CardStack.h"
+#include <Script2/String.hpp>
+namespace CardsWorld {
 
 const SIN* SuitValuesDefault() {
   static const SIN kDefaultSuitValues[4] = {1, 2, 3, 4};
   return kDefaultSuitValues;
 }
 
-const CH1* Deck::DefaultDeckArtDirectory() {
+const CHA* Deck::DefaultDeckArtDirectory() {
   return "../../../images/front_deck_art/vectorized_playing_cards/";
 }
 
-const CH1* Deck::DefaultRearDeckImage() {
+const CHA* Deck::DefaultRearDeckImage() {
   return "../../../images/rear_deck_art/default_deck_rear_image.svg";
 }
 
@@ -36,7 +33,7 @@ Deck::Deck(BOL deck_contains_jokers, SIN aces_are_high,
       aces_high_(aces_are_high),
       suit_culture_(suit_culture),
       card_count_(deck_contains_jokers ? defaultNumCardsWithJokers
-                                       : kDefaultCardCount),
+                                       : CardCountDefault),
       lowest_card_value_(aces_are_high == 0 ? 1 : 2),
       highest_card_value_(aces_are_high == 0 ? 13 : 14) {
   Initialize(read_deck_image_filename, deck_art_folder);
@@ -133,7 +130,7 @@ SIN Deck::CheckDeckArtFolder(const CHR* deck_art_folder) {
     for (SIN pip_value = 1; pip_value <= 13; ++pip_value) {
       SIN index = suit * pip_value;
 
-      AStrand<CH1> expected_filename;
+      AStrand<CHA> expected_filename;
       // Examples "1-2.svg" = Ace of Diamons
       // "13-4" = King of Spades
       expected_filename << pip_value << '-' << suit << ".svg";
@@ -147,7 +144,7 @@ SIN Deck::CheckDeckArtFolder(const CHR* deck_art_folder) {
 }
 
 SIN Deck::SetDeckArt(const CHR* deck_art_folder) {
-  SIN returnValue = Deck::CheckDeckArtFolder();
+  SIN return_value = Deck::CheckDeckArtFolder();
 
   // Now we know that all of the files are in the directory and are nammed
   // correctly. Now lets actually change the images.
@@ -166,7 +163,7 @@ SIN Deck::SetDeckArt(const CHR* deck_art_folder) {
   return 0;
 }
 
-const CH1* Deck::SuitString(Card::CardSuit suit) {
+const CHA* Deck::SuitString(Card::CardSuit suit) {
   switch (suit_culture_) {
     case Card::kFrench: {
       switch (suit) {
