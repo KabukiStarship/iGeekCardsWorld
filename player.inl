@@ -1,20 +1,18 @@
-/* Unseenia Cards @version 0.x
-@link    https://github.com/kabuki-starship/unseenia.cards.git
+/* iGeek CardsWorld @version 0.x
+@link    https://github.com/KabukiStarship/unseenia.cards.git
 @file    /player.inl
-@author  Cale McCollough <https://cale-mccollough.github.io>
-@license Copyright (C) 2014-9 Kabuki Starship <kabukistarship.com>;
+@author  Cale McCollough <https://cookingwithcale.org>
+@license Copyright (C) 2014-21 Kabuki Starship <kabukistarship.com>;
 All right reserved (R). This Source Code Form is subject to the terms of the
 Mozilla Public License, v. 2.0. If a copy of the MPL was not distributed with
 this file, You can obtain one at <https://mozilla.org/MPL/2.0/>. */
+#include "Player.h"
+namespace CardsWorld {
 
-#include "player.h"
-
-using namespace unseenia::cards;
-
-Player::Player(const CHR* name, SIN startingPoints)
+Player::Player(const CHR* name, SIN points_init_)
     : name_(name),
       win_count_(0),
-      point_count_(startingPoints < 1 ? 1 : startingPoints),
+      point_count_(points_init_ < 1 ? 1 : points_init_),
       hand_(Hand()) {}
 
 const CHR* Player::Name() { return name_; }
@@ -26,11 +24,11 @@ void Player::SetName(const CHR* name) {
 
 Hand& Player::Hand() { return hand_; }
 
-void Player::SetHand(Hand& hand) { hand_ = hand; }
+void Player::HandSet(Hand& hand) { hand_ = hand; }
 
-SIN Player::PointCount() { return point_count_; }
+SIN Player::PointsCount() { return point_count_; }
 
-SIN Player::AddPoints(SIN num_points) {
+SIN Player::PointsAdd(SIN num_points) {
   SIN point_count = point_count_;
   point_count += num_points;
   point_count_ = point_count;
@@ -39,8 +37,9 @@ SIN Player::AddPoints(SIN num_points) {
 
 SIN Player::WinCount() { return win_count_; }
 
-void Player::AddWin() { ++win_count_; }
+void Player::WinAdd() { ++win_count_; }
 
 void Player::ResetWins() { win_count_ = 0; }
 
-void Player::DealHand(Hand& hand) { hand_ = hand; }
+void Player::HandDeal(Hand& hand) { hand_ = hand; }
+}  // namespace CardsWorld

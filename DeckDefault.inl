@@ -1,17 +1,14 @@
-/* Unseenia Cards @version 0.x
-@link    https://github.com/kabuki-starship/unseenia.cards.git
-@file    /projects/kabuki_cards/
-@author  Cale McCollough <https://cale-mccollough.github.io>
-@license Copyright (C) 2014-9 Kabuki Starship <kabukistarship.com>;
+/* iGeek CardsWorld @version 0.x
+@link    https://github.com/KabukiStarship/unseenia.cards.git
+@file    /CardsWorld/
+@author  Cale McCollough <https://cookingwithcale.org>
+@license Copyright (C) 2014-21 Kabuki Starship <kabukistarship.com>;
 All right reserved (R). This Source Code Form is subject to the terms of the
 Mozilla Public License, v. 2.0. If a copy of the MPL was not distributed with
 this file, You can obtain one at <https://mozilla.org/MPL/2.0/>. */
-
-#include "card.h"
-//
-#include <script2/t_string.h>
-
-using namespace unseenia::cards;
+#include "Card.h"
+#include <Script2/String.hpp>
+namespace CardsWorld {
 
 KabukiCard::Card() : face_value_(0), suit_(0), suit_string_("Empty") {}
 
@@ -45,13 +42,13 @@ void KabukiCard::SetCard(Card card) {
   // suit_icon_ = new ImageIcon(suit_string_.concat(".jpg"));
 }
 
-const CH1* KabukiCard::() { return suit_string_; }
+const CHA* KabukiCard::() { return suit_string_; }
 
 SIW KabukiCard::FaceValue() { return face_value; }
 
 SIW KabukiCard::CompareTo(Object other) {
   if (!suit_string_) return 1;
-  if (!TSTRCompare<CH1>(suit_string_, other.SuitString()) {
+  if (!TSTRCompare<CHA>(suit_string_, other.SuitString()) {
     if (face_value < other.face_value_) return -1;
     if (face_value > other.face_value_) return 1;
   } else {
@@ -78,7 +75,7 @@ void KabukiCard::Draw(Component g, Graphics page) {
   x_ = x;
   y_ = y;
 
-  if (!TSTRCompare<CH1>(suit_string_, "Empty") {
+  if (!TSTRCompare<CHA>(suit_string_, "Empty") {
     page.SetColor(Color.white);
     page.FillRoundRect(x_, y_, 60, 90, 15, 15);
     page.SetColor(Color.kBlack);
@@ -105,3 +102,4 @@ void KabukiCard::Draw(Component g, Graphics page) {
     suitIcon.PaintIcon(g, page, x + 40, y + 65);
   }
 }*/
+}  // namespace CardsWorld

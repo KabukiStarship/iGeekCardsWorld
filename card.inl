@@ -1,41 +1,38 @@
-/* Unseenia Cards @version 0.x
-@link    https://github.com/kabuki-starship/unseenia.cards.git
+/* iGeek CardsWorld @version 0.x
+@link    https://github.com/KabukiStarship/unseenia.cards.git
 @file    /card.inl
-@author  Cale McCollough <https://cale-mccollough.github.io>
-@license Copyright (C) 2014-9 Kabuki Starship <kabukistarship.com>;
+@author  Cale McCollough <https://cookingwithcale.org>
+@license Copyright (C) 2014-21 Kabuki Starship <kabukistarship.com>;
 All right reserved (R). This Source Code Form is subject to the terms of the
 Mozilla Public License, v. 2.0. If a copy of the MPL was not distributed with
 this file, You can obtain one at <https://mozilla.org/MPL/2.0/>. */
+#include "Card.h"
+#include "Deck.h"
+namespace CardsWorld {
 
-#include "card.h"
-#include "deck.h"
-
-using namespace _;
-using namespace unseenia::cards;
-
-const CH1** SuitCultures() {
-  static const CH1* strings[] = {"French",     "German",     "Swiss-German",
+const CHA** SuitCultures() {
+  static const CHA* strings[] = {"French",     "German",     "Swiss-German",
                                  "Piacentine", "Napoletane", "Spagnole",
                                  "Bergamasche"};
   return strings;
 }
 
-const CH1** Card::FrenchSuits() {
-  static const CH1* strings[4] = {"Clubs", "Diamonds", "Hearts", "Spades"};
+const CHA** Card::FrenchSuits() {
+  static const CHA* strings[4] = {"Clubs", "Diamonds", "Hearts", "Spades"};
   return strings;
 }
 
-const CH1** Card::GermanSuits() {
-  static const CH1* strings[4] = {"Acorns", "Bells", "Hearts", "Lieves"};
+const CHA** Card::GermanSuits() {
+  static const CHA* strings[4] = {"Acorns", "Bells", "Hearts", "Lieves"};
   return strings;
 }
-const CH1** Card::SwissGermanSuits() {
-  static const CH1* strings[4] = {"Acorns", "Bells", "Roses", "Shields"};
+const CHA** Card::SwissGermanSuits() {
+  static const CHA* strings[4] = {"Acorns", "Bells", "Roses", "Shields"};
   return strings;
 }
 
-const CH1** Card::LatinSuits() {
-  static const CH1* strings[4] = {"Clubs", "Coins", "Cups", "Swords"};
+const CHA** Card::LatinSuits() {
+  static const CHA* strings[4] = {"Clubs", "Coins", "Cups", "Swords"};
   return strings;
 }
 
@@ -90,7 +87,7 @@ SIN Card::PointValue() { return point_value_; }
 void Card::SetPointValue(SIN value) { point_value_ = value; }
 
 void Card::Set(SIN pip_value, SIN face_value, SIN point_value, SIN suit_value,
-               SuitCulture suit_culture, const CH1* image_directory) {
+               SuitCulture suit_culture, const CHA* image_directory) {
   if (pip_value < 0)
     pip_value = pip_value;
   else if (pip_value > 13)
@@ -147,7 +144,7 @@ CardSuit Card::CardSuit() { return suit_; }
 SuitCulture Culture() { return suit_culture_; }
 
 void Card::SetCulture(SuitCulture suit_culture) {
-  if (suit_culture < 1 || suit_culture >= kSuitCultureCount) return;
+  if (suit_culture < 1 || suit_culture >= SuitCultureCount) return;
   suit_culture_ = suit_culture;
 }
 
@@ -161,7 +158,7 @@ SIN Card::LoadCardImage(const CHR* directory) {
   if (!file_path.isDirectory()) return -1;
   // The directory is good, now check to see if the the directory contains an
   // image with the correct naming convention.
-  AString<> image_filename = pip_value << '-' << suit_ << ".svg";
+  _::AString<> image_filename = pip_value << '-' << suit_ << ".svg";
   File filename = directory << image_filename;
   if (!filename.IsOnFile()) return 2;
   Image image = ImageCache::GetFromFile(filename);
@@ -200,3 +197,4 @@ Printer& CardPrint(Printer& o, const Card& card) {
   }
   return o << suit_string;
 }
+}  // namespace CardsWorld

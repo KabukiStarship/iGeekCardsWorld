@@ -1,17 +1,15 @@
-/* Unseenia Cards @version 0.x
-@link    https://github.com/kabuki-starship/unseenia.cards.git
-@file    /projects/kabuki_cards/source/blackjack/card_stack.inl
-@author  Cale McCollough <https://cale-mccollough.github.io>
-@license Copyright (C) 2014-9 Kabuki Starship <kabukistarship.com>;
+/* iGeek CardsWorld @version 0.x
+@link    https://github.com/KabukiStarship/unseenia.cards.git
+@file    /CardsWorld/source/blackjack/card_stack.inl
+@author  Cale McCollough <https://cookingwithcale.org>
+@license Copyright (C) 2014-21 Kabuki Starship <kabukistarship.com>;
 All right reserved (R). This Source Code Form is subject to the terms of the
 Mozilla Public License, v. 2.0. If a copy of the MPL was not distributed with
 this file, You can obtain one at <https://mozilla.org/MPL/2.0/>. */
-
-#include "cardstack.h"
+#include "CardStack.h"
 //
-#include <script2/t_stack.h>
-
-using namespace unseenia::cards;
+#include <Script2/Stack.h>
+namespace CardsWorld {
 
 CardStack::CardStack()
     : card_count_min_(0),
@@ -111,9 +109,9 @@ SIN CardStack::DrawCards(CardStack& card_source, SIN cards_to_take) {
   return 0;
 }
 
-BOL CardStack::RemoveCard(Card* thisCard) {
-  if (!cards_.Contains(thisCard)) return false;
-  cards_.RemoveFirstMatchingValue(thisCard);
+BOL CardStack::RemoveCard(Card* card) {
+  if (!cards_.Contains(card)) return false;
+  cards_.RemoveFirstMatchingValue(card);
   return true;
 }
 
@@ -177,3 +175,5 @@ BOL CardStack::IsEmpty() { return cards_.Size() == 0; }
 BOL CardStack::IsVisible() { return is_visible_; }
 
 void CardStack::SetVisiblity(BOL visiblity) { is_visible_ = visiblity; }
+
+}  // namespace CardsWorld

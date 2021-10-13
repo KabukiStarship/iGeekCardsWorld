@@ -1,30 +1,30 @@
-/* Unseenia Cards @version 0.x
-@link    https://github.com/kabuki-starship/unseenia.cards.git
-@file    /_seams/03.blackjack.h
-@author  Cale McCollough <https://cale-mccollough.github.io>
-@license Copyright (C) 2014-9 Kabuki Starship <kabukistarship.com>;
+/* iGeek CardsWorld @version 0.x
+@link    https://github.com/KabukiStarship/unseenia.cards.git
+@file    /_Seams/03.blackjack.h
+@author  Cale McCollough <https://cookingwithcale.org>
+@license Copyright (C) 2014-21 Kabuki Starship <kabukistarship.com>;
 All right reserved (R). This Source Code Form is subject to the terms of the
 Mozilla Public License, v. 2.0. If a copy of the MPL was not distributed with
 this file, You can obtain one at <https://mozilla.org/MPL/2.0/>. */
 
 #pragma once
-#include <_config.h>
+#include <_Config.h>
 
-#include "../../script2/string.hpp"
+#include "../../Script2/string.hpp"
 
-#if SEAM == UNSEENIA_CARDS_BLACKJACK
-#include "_debug.inl"
+#if SEAM == IGEEK_CARDSWORD_BLACKJACK
+#include "_Debug.inl"
 #else
-#include "_release.inl"
+#include "_Release.inl"
 #endif
 
-using namespace _;
+
 
 namespace unseenia {
 namespace cards {
 
-inline const CH1* Uniprinter(const CH1* args) {
-#if SEAM >= UNSEENIA_CARDS_BLACKJACK
+inline const CHA* Uniprinter(const CHA* args) {
+#if SEAM >= IGEEK_CARDSWORD_BLACKJACK
   A_TEST_BEGIN;
 
   D_COUT(Headingf("\nLets play Blackjack!"));

@@ -1,37 +1,28 @@
-/* Unseenia Cards @version 0.x
-@link    https://github.com/kabuki-starship/unseenia.cards.git
-@file    /blackjack_player.inl
-@author  Cale McCollough <https://cale-mccollough.github.io>
-@license Copyright (C) 2014-9 Kabuki Starship <kabukistarship.com>;
+/* iGeek CardsWorld @version 0.x
+@link    https://github.com/KabukiStarship/unseenia.cards.git
+@file    /BlackjackPlayer.inl
+@author  Cale McCollough <https://cookingwithcale.org>
+@license Copyright (C) 2014-21 Kabuki Starship <kabukistarship.com>;
 All right reserved (R). This Source Code Form is subject to the terms of the
 Mozilla Public License, v. 2.0. If a copy of the MPL was not distributed with
 this file, You can obtain one at <https://mozilla.org/MPL/2.0/>. */
+#include "BlackjackPlayer.h"
+#include "BlackjackDealer.h"
+#include "BlackjackHand.h"
+#include <Script2/RNG.h>
+namespace CardsWorld {
 
-#include <_config.h>
-
-#include "blackjack_player.h"
-
-#include <cards/card_stack.h>
-#include <cards/hand.h>
-
-#include "blackjack_dealer.h"
-#include "blackjack_hand.h"
-
-#include <script2/c_rng.h>
-
-using namespace unseenia::cards;
-
-BlackjackPlayer::BlackjackPlayer(const CHR* name, SIN startingPoints,
-                                 BOL is_player)
-    : player_(name, startingPoints, is_player) {}
+BlackjackPlayer::BlackjackPlayer(const CHR* name, SIN points_init_,
+                                 BOL is_player) :
+     player_(name, points_init_, is_player) {}
 
 BlackjackPlayer::~BlackjackPlayer() {
   // Nothing to do here.
 }
 
 BOL BlackjackPlayer::PlayOrPass(Dealer& dealer) {
-  BlackjackHand::HighLowScore hand_totals = GetHighLowScore(),
-                              other_hand_totals = dealer.GetHighLowScore();
+  BlackjackHand::HighLowScore hand_totals = HighLowScore(),
+                              other_hand_totals = dealer.HighLowScore();
 
   SIN high_score = hand_totals.high, low_score = hand_totals.low,
       other_high_score = other_hand_totals.high,
@@ -46,7 +37,8 @@ BOL BlackjackPlayer::PlayOrPass(Dealer& dealer) {
 
   if (high_score <= 21 - 10)
     return true;  //< The highest card value is 10, so if our highest score is
-                  // less than 11, then we can take any card and not go over 21.
+                  //< less than 11, then we can take any card and not go
+                  //over 21.
 
   if (high_score < other_high_score)  // Than we have to play or we loose.
     return true;
@@ -79,9 +71,11 @@ BOL BlackjackPlayer::PlayOrPass(Dealer& dealer) {
   random number between 0 and 1, then we have a 50 % chance of getting a
   number greater than 0.5. */
 
-  float random_number_between_0_and_1 = RandomFP4();
+  float random_number_between_0_and_1 = RandomFP4();  //>Todo FixMe
 
   return chance_of_winning * random_number_between_0_and_1 >= 0.5;
 }
 
 void BlackjackPlayer::PlayHand() {}
+
+}  // namespace CardsWorld

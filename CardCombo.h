@@ -1,19 +1,15 @@
-/* Unseenia Cards @version 0.x
-@link    https://github.com/kabuki-starship/unseenia.cards.git
-@file    /card_combo.h
-@author  Cale McCollough <https://cale-mccollough.github.io>
-@license Copyright (C) 2014-9 Kabuki Starship <kabukistarship.com>;
+/* iGeek CardsWorld @version 0.x
+@link    https://github.com/KabukiStarship/unseenia.cards.git
+@file    /CardCOmbo.h
+@author  Cale McCollough <https://cookingwithcale.org>
+@license Copyright (C) 2014-21 Kabuki Starship <kabukistarship.com>;
 All right reserved (R). This Source Code Form is subject to the terms of the
 Mozilla Public License, v. 2.0. If a copy of the MPL was not distributed with
 this file, You can obtain one at <https://mozilla.org/MPL/2.0/>. */
-
-#ifndef UNSEENIA_CARDS_CARDCOMBO_H
-#define UNSEENIA_CARDS_CARDCOMBO_H
-
-#include "cardstack.h"
-
-namespace unseenia {
-namespace cards {
+#ifndef IGEEK_CARDSWORD_CARDCOMBO_DECL
+#define IGEEK_CARDSWORD_CARDCOMBO_DECL
+#include "CardStack.h"
+namespace CardWorld {
 
 /* Class that represents a CardStack point combination in a playing card game.
 There are two major things that will effect a combination's rank besides suit
@@ -28,7 +24,7 @@ class CardCombo : public CardStack {
 
  public:
   /* Default constructor. */
-  CardCombo(CardStack& copyStack, SIN aces_high, SIN thisJokerPipValue1 = 0,
+  CardCombo(CardStack& copy_stack, SIN aces_high, SIN thisJokerPipValue1 = 0,
             SIN thisJokerSuitValue1 = 1, SIN thisJokerPipValue2 = 0,
             SIN thisJokerSuitValue2 = 2);
 
@@ -71,7 +67,6 @@ class CardCombo : public CardStack {
   SIN SetAcesHigh(SIN value);
 };
 
-}  // namespace cards
-}  // namespace unseenia
+}  // namespace CardWorld
 
 #endif

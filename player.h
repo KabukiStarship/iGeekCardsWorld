@@ -1,22 +1,17 @@
-/* Unseenia Cards @version 0.x
-@link    https://github.com/kabuki-starship/unseenia.cards.git
-@file    /player.h
-@author  Cale McCollough <https://cale-mccollough.github.io>
-@license Copyright (C) 2014-9 Kabuki Starship <kabukistarship.com>;
+/* iGeek CardsWorld @version 0.x
+@link    https://github.com/KabukiStarship/unseenia.cards.git
+@file    /Player.h
+@author  Cale McCollough <https://cookingwithcale.org>
+@license Copyright (C) 2014-21 Kabuki Starship <kabukistarship.com>;
 All right reserved (R). This Source Code Form is subject to the terms of the
 Mozilla Public License, v. 2.0. If a copy of the MPL was not distributed with
 this file, You can obtain one at <https://mozilla.org/MPL/2.0/>. */
-
-#ifndef UNSEENIA_CARDS_PLAYER_H
-#define UNSEENIA_CARDS_PLAYER_H
-
-#include <script2/t_strand.h>
-
-#include "cardstack.h"
-#include "hand.h"
-
-namespace unseenia {
-namespace cards {
+#ifndef IGEEK_CARDSWORD_PLAYER_DECL
+#define IGEEK_CARDSWORD_PLAYER_DECL
+#include <Script2/String.hpp>
+#include "CardStack.h"
+#include "Hand.h"
+namespace CardsWorld {
 
 class Player {
   AStrand<> name_;   //< Player's name.
@@ -26,7 +21,7 @@ class Player {
 
  public:
   /* Default Constructor. */
-  Player(const CHR* name = "You", SIN points_init = 10, BOL is_player = false);
+  Player(const CHR* name = "You", SIN points_init_ = 10, BOL is_player = false);
 
   /* Does nothing. */
   virtual ~Player() {}
@@ -51,14 +46,14 @@ class Player {
   Hand& Hand();
 
   /* Sets the hand to the hand. */
-  void SetHand(Hand& hand);
+  void HandSet(Hand& hand);
 
   /* Returns the point total. */
-  SIN PointCount();
+  SIN PointsCount();
 
   /* Adds a specified point_count to the players point total.
   @return Returns 0 upon success, and -1 if point_count is less than 1. */
-  SIN AddPoints(SIN num_points);
+  SIN PointsAdd(SIN num_points);
 
   /* Resets the win_count to 0. */
   void ResetWins();
@@ -67,10 +62,10 @@ class Player {
   SIN WinCount();
 
   /* Adds a win to the players win_count. */
-  void AddWin();
+  void WinAdd();
 
   /* Resets the number of wins to 0. */
-  void DealHand(Hand& hand);
+  void HandDeal(Hand& hand);
 
   /* Prints this object to the Printer. */
   template <typename Printer>
@@ -83,7 +78,6 @@ class Player {
   }
 };
 
-}  // namespace cards
-}  // namespace unseenia
+}  // namespace CardsWorld
 
 #endif

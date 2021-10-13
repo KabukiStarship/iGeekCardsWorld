@@ -1,20 +1,17 @@
-/* Unseenia Cards @version 0.x
-@link    https://github.com/kabuki-starship/unseenia.cards.git
-@file    /hand.h
-@author  Cale McCollough <https://cale-mccollough.github.io>
-@license Copyright (C) 2014-9 Kabuki Starship <kabukistarship.com>;
+/* iGeek CardsWorld @version 0.x
+@link    https://github.com/KabukiStarship/unseenia.cards.git
+@file    /Hand.h
+@author  Cale McCollough <https://cookingwithcale.org>
+@license Copyright (C) 2014-21 Kabuki Starship <kabukistarship.com>;
 All right reserved (R). This Source Code Form is subject to the terms of the
 Mozilla Public License, v. 2.0. If a copy of the MPL was not distributed with
 this file, You can obtain one at <https://mozilla.org/MPL/2.0/>. */
-
-#ifndef UNSEENIA_CARDS_HAND_HEADER
-#define UNSEENIA_CARDS_HAND_HEADER
-
-#include "cardcombo.h"
-#include "cardstack.h"
-
-namespace unseenia {
-namespace cards {
+#pragma once
+#ifndef IGEEK_CARDSWORD_HAND_DECL
+#define IGEEK_CARDSWORD_HAND_DECL
+#include "CardCombo.h"
+#include "CardStack.h"
+namespace CardsWorld {
 
 /* A hand in a playing card game.
 In most cases, the player will have a visible set of cards, and a hidden
@@ -33,7 +30,7 @@ class Hand : public CardStack {
   and add the minimumNumCards to it.
   @pre stock.CardCount() must be > min_cards. */
   Hand(CardStack& stock, SIN min_cards = 1,
-       SIN card_count_max_ = Deck::kCardCountWithJokers);
+       SIN card_count_max_ = Deck::CardCountWithJokers);
 
   /* Virtual destructor. */
   virtual ~Hand() {}
@@ -96,8 +93,5 @@ class Hand : public CardStack {
     return o;
   }
 };
-
-}  // namespace cards
-}  // namespace unseenia
-
+}  // namespace CardsWorld
 #endif

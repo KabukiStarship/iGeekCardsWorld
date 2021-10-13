@@ -1,19 +1,15 @@
-/* Unseenia Cards @version 0.x
-@link    https://github.com/kabuki-starship/unseenia.cards.git
-@file    /projects/kabuki_cards/source/deck.h
-@author  Cale McCollough <https://cale-mccollough.github.io>
-@license Copyright (C) 2014-9 Kabuki Starship <kabukistarship.com>;
+/* iGeek CardsWorld @version 0.x
+@link    https://github.com/KabukiStarship/unseenia.cards.git
+@file    /CardsWorld/source/Deck.h
+@author  Cale McCollough <https://cookingwithcale.org>
+@license Copyright (C) 2014-21 Kabuki Starship <kabukistarship.com>;
 All right reserved (R). This Source Code Form is subject to the terms of the
 Mozilla Public License, v. 2.0. If a copy of the MPL was not distributed with
 this file, You can obtain one at <https://mozilla.org/MPL/2.0/>. */
-
-#ifndef UNSEENIA_CARDS_DECK_H
-#define UNSEENIA_CARDS_DECK_H
-
-#include "card.h"
-
-namespace unseenia {
-namespace cards {
+#ifndef IGEEK_CARDSWORD_DECK_DECL
+#define IGEEK_CARDSWORD_DECK_DECL
+#include "Card.h"
+namespace CardsWorld {
 
 /* Class that reprents a Deck of Cards.
 A Deck of cards usually has 52 cards, but can also have 2 jokers, a kBlack
@@ -41,9 +37,9 @@ class Deck {
  public:
   enum {
     // The default number of playing cards in a deck excluding Jokers.
-    kDefaultCardCount = 52,
+    CardCountDefault = 52,
     // The default number of playing cards in a deck including Jokers.
-    kCardCountWithJokers = 54,
+    CardCountWithJokers = 54,
     // Flag represents if Aces are high (i.e. has a face value of 14).
     kAcesHigh = 14,
     // Flag represents if Aces are low (i.e. has a face value of 1).
@@ -81,8 +77,8 @@ class Deck {
   we are using. */
   Deck(BOL deck_contains_jokers = kHasNoJokers, SIN aces_are_high = kAcesHigh,
        SuitCulture card_suit_culture = Card::kFrench,
-       const CH1* rear_deck_image_filename = kDefaultRearDeckImage),
-       const CH1* deck_art_folder = kDefaultDeckArtDirectory);
+       const CHA* rear_deck_image_filename = kDefaultRearDeckImage),
+       const CHA* deck_art_folder = kDefaultDeckArtDirectory);
 
   /* Destructor. */
   virtual ~Deck() {}
@@ -129,8 +125,8 @@ class Deck {
   failed filename. */
   SIN SetDeckArt(const CHR* deck_art_folder);
 
-  /* Returns a AString representation of the suit. */
-  const CH1* SuitString(Card::CardSuit suit);
+  /* Returns a _::AString representation of the suit. */
+  const CHA* SuitString(Card::CardSuit suit);
 
   /* Prints this object to the Printer. */
   template <typename Printer>
@@ -155,8 +151,5 @@ class Deck {
    * [1-13]-[1-4].svg/J-1.svg/J-2.svg format. */
   SIN CheckDeckArtFolder(const CHR* deck_art_folder);
 };
-
-}  // namespace cards
-}  // namespace unseenia
-
+}  // namespace CardsWorld
 #endif

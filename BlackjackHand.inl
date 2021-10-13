@@ -1,20 +1,17 @@
-/* Unseenia Cards @version 0.x
-@link    https://github.com/kabuki-starship/unseenia.cards.git
-@file    /blackjack_hand.inl
-@author  Cale McCollough <https://cale-mccollough.github.io>
-@license Copyright (C) 2014-9 Kabuki Starship <kabukistarship.com>;
+/* iGeek CardsWorld @version 0.x
+@link    https://github.com/KabukiStarship/unseenia.cards.git
+@file    /BlackjackHand.inl
+@author  Cale McCollough <https://cookingwithcale.org>
+@license Copyright (C) 2014-21 Kabuki Starship <kabukistarship.com>;
 All right reserved (R). This Source Code Form is subject to the terms of the
 Mozilla Public License, v. 2.0. If a copy of the MPL was not distributed with
 this file, You can obtain one at <https://mozilla.org/MPL/2.0/>. */
-
-#include "blackjack_hand.h"
-//
-#include "blackjack_cardcombo.h"
-
-using namespace unseenia::cards;
+#include "BlackjackHand.h"
+#include "BlackjackCardCombo.h"
+namespace CardsWorld {
 
 BlackjackHand::BlackjackHand(CardStack& startingCards)
-    : Hand(startingCards, 2, Deck::kDefaultCardCount) {}
+    : Hand(startingCards, 2, Deck::CardCountDefault) {}
 
 AStack<CardCombo> BlackjackHand::getHandCombos() {
     auto low_score = BlackjackCardCombo (,
@@ -53,7 +50,7 @@ SIN BlackjackHand::AddCard(Card* new_card) {
 }
 
 String BlackjackHand::toString() {
-  HighLowScore highLowScore = GetHighLowScore();
+  HighLowScore highLowScore = HighLowScore();
 
   return "BlackjackHand:\nHigh score: " + String(highLowScore.high) +
          " Low Score: " + String(highLowScore.low) + "\n" +
